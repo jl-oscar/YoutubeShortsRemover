@@ -3,15 +3,27 @@
   "name": "YouTube Shorts Remover",
   "version": "1.0",
   "description": "Removes YouTube Shorts sections from the homepage and recommendations.",
-  "permissions": ["scripting"],
+  "permissions": [
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://www.youtube.com/*"
+  ],
   "content_scripts": [
     {
-      "matches": ["*://www.youtube.com/*"],
-      "js": ["content.js"],
+      "matches": [
+        "*://www.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
       "run_at": "document_idle"
     }
   ],
   "action": {
+    "default_popup": "popup.html",
     "default_title": "YT Shorts Remover"
   }
 }
